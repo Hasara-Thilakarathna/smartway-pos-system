@@ -15,7 +15,7 @@
 
 <AnchorPane fx:id="root" prefHeight="712.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.app.controller.ManageCustomerForm">
    <children>
-      <ImageView fx:id="imgBack" fitHeight="40.0" fitWidth="68.0" layoutX="27.0" layoutY="22.0" onMouseClicked="#navigateOnMouseClicked" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgBack" fitHeight="40.0" fitWidth="68.0" layoutX="27.0" layoutY="22.0" onMouseClicked="#navigateOnMouseClicked" onMouseEntered="#playAnimationOnMouseEnter" onMouseExited="#playAnimationOnMouseExit" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../asset.img/back.png" />
          </image>
