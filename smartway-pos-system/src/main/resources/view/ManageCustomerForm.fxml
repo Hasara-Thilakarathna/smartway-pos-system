@@ -25,7 +25,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <JFXButton fx:id="btnNewCustomer" buttonType="RAISED" layoutX="444.0" layoutY="88.0" onAction="#btnNewCustomerOnAction" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: green;" text="+ NEW CUSTOMER" textFill="WHITE" AnchorPane.rightAnchor="14.0" />
+      <JFXButton fx:id="btnNewCustomer" buttonType="RAISED" layoutX="444.0" layoutY="88.0" onAction="#btnNewCustomerOnAction" prefHeight="38.0" prefWidth="142.0" style="-fx-background-color: green;" text="+ NEW CUSTOMER" textFill="WHITE" AnchorPane.rightAnchor="14.0" />
       <Separator layoutX="180.0" layoutY="76.0" prefWidth="200.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
       <VBox layoutX="27.0" layoutY="129.0" prefHeight="144.0" prefWidth="454.0" spacing="10.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
          <children>
@@ -49,18 +49,20 @@
             </VBox>
          </children>
       </VBox>
-      <HBox layoutX="230.0" layoutY="299.0" spacing="10.0">
+      <HBox fx:id="hbox" alignment="CENTER" layoutX="237.0" layoutY="291.0" spacing="10.0">
          <children>
-            <JFXButton fx:id="btnSave" buttonType="RAISED" onAction="#btnSaveOnAction" prefHeight="24.0" prefWidth="63.0" style="-fx-background-color: LIGHTGREEN;" text="SAVE" />
-            <JFXButton fx:id="btnDelete" buttonType="RAISED" onAction="#btnDeleteOnAction" style="-fx-background-color: LIGHTGRAY;" text="DELETE" />
-         </children>
-      </HBox>
-      <TableView fx:id="tblCustomers" layoutX="171.0" layoutY="348.0" prefHeight="351.0" prefWidth="570.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+            <JFXButton fx:id="btnSave" buttonType="RAISED" onAction="#btnSaveOnAction" prefHeight="36.0" prefWidth="84.0" style="-fx-background-color: LIGHTGREEN; -fx-background-radius: 10;" text="SAVE" />
+            <JFXButton fx:id="btnDelete" buttonType="RAISED" onAction="#btnDeleteOnAction" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: LIGHTGRAY; -fx-background-radius: 10;" text="DELETE" />
+         </children></HBox>
+      <TableView fx:id="tblCustomers" layoutX="171.0" layoutY="348.0" prefHeight="351.0" prefWidth="570.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="346.0">
         <columns>
           <TableColumn prefWidth="123.0" text="CUSTOMER ID" />
           <TableColumn minWidth="0.0" prefWidth="202.0" text="CUSTOMER NAME" />
             <TableColumn prefWidth="244.0" text="CUSTOMER ADDRESS" />
         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
       </TableView>
    </children>
 </AnchorPane>

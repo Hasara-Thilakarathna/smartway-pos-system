@@ -51,7 +51,7 @@ public class MainViewController {
             ds.setRadius(20);
             img.setEffect(ds);
 
-            switch (img.getId()){
+            switch (img.getId()) {
                 case "imgCustomer":
                     lblTitle.setText("Manage Customers");
                     lblDescription.setText("Click to add, edit, delete, search or view customers");
@@ -91,7 +91,7 @@ public class MainViewController {
 
     public void navigateOnMouseClicked(MouseEvent event) throws IOException {
         if (event.getSource() instanceof ImageView) {
-            ImageView img= (ImageView) event.getSource();
+            ImageView img = (ImageView) event.getSource();
 
             Parent root = null;
 
@@ -117,10 +117,12 @@ public class MainViewController {
                 primaryStage.sizeToScene();
                 primaryStage.centerOnScreen();
 
-//                TranslateTransition tt = new TranslateTransition(Duration.millis(350), subScene.getRoot());
-//                tt.setFromX(-subScene.getWidth());
-//                tt.setToX(0);
-//                tt.play();
+                ScaleTransition fadeTransition = new ScaleTransition(Duration.millis(350), subScene.getRoot());
+                fadeTransition.setFromX(0);
+                fadeTransition.setFromY(0);
+                fadeTransition.setToX(1);
+                fadeTransition.setToY(1);
+                fadeTransition.play();
             }
         }
     }
