@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="447.0" prefWidth="618.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.app.controller.MainViewController">
+   <children>
+      <Label alignment="CENTER" layoutX="15.0" layoutY="28.0" text="SMARTWAY " textFill="#328079" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="28.0">
+         <font>
+            <Font name="Ubuntu Bold" size="29.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="171.0" layoutY="68.0" text="POINT of SALE SYSTEM" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="70.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="92.0" fitWidth="102.0" layoutX="371.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset.img/main-window.gif" />
+         </image>
+      </ImageView>
+      <Separator layoutX="66.0" layoutY="124.0" prefHeight="9.0" prefWidth="501.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+      <HBox alignment="CENTER" layoutX="34.0" layoutY="156.0" prefHeight="116.0" prefWidth="609.0" spacing="35.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="156.0">
+         <children>
+            <ImageView fx:id="imgCustomer" fitHeight="100.0" fitWidth="100.0" onMouseClicked="#navigateOnMouseClicked" onMouseEntered="#playOnMouseEnter" onMouseExited="#playOnMouseExit" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+               <image>
+                  <Image url="@../asset.img/customer.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgItem" fitHeight="100.0" fitWidth="100.0" layoutX="160.0" layoutY="10.0" onMouseClicked="#navigateOnMouseClicked" onMouseEntered="#playOnMouseEnter" onMouseExited="#playOnMouseExit" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+               <image>
+                  <Image url="@../asset.img/items.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgOrder" fitHeight="100.0" fitWidth="100.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#navigateOnMouseClicked" onMouseEntered="#playOnMouseEnter" onMouseExited="#playOnMouseExit" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+               <image>
+                  <Image url="@../asset.img/orders.png" />
+               </image>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </ImageView>
+            <ImageView fx:id="imgSearch" fitHeight="120.0" fitWidth="100.0" layoutX="310.0" layoutY="10.0" onMouseClicked="#navigateOnMouseClicked" onMouseEntered="#playOnMouseEnter" onMouseExited="#playOnMouseExit" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+               <image>
+                  <Image url="@../asset.img/search.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <Label alignment="CENTER" layoutX="111.0" layoutY="352.0" text="Copyright (c) 2023 Hasara Thilakarathna. All Rights Reserved." AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+         <font>
+            <Font size="11.0" />
+         </font></Label>
+      <Label fx:id="lblTitle" alignment="CENTER" layoutX="272.0" layoutY="306.0" text="Title" textFill="#62cdc6" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+         <font>
+            <Font name="Ubuntu Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDescription" alignment="CENTER" layoutX="249.0" layoutY="337.0" text="Description" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+         <font>
+            <Font name="Ubuntu" size="14.0" />
+         </font></Label>
+   </children>
+</AnchorPane>
