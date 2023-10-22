@@ -48,9 +48,9 @@ public class CustomerDataAccess {
     }
 
     public static void updateCustomer(Customer customer) throws SQLException {
-        STM_UPDATE.setString(1,customer.getId());
-        STM_UPDATE.setString(2,customer.getName());
-        STM_UPDATE.setString(3,customer.getAddress());
+        STM_UPDATE.setString(3,customer.getId());
+        STM_UPDATE.setString(1,customer.getName());
+        STM_UPDATE.setString(2,customer.getAddress());
         STM_UPDATE.executeUpdate();
     }
 

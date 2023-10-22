@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -13,48 +14,84 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="712.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.app.controller.ManageCustomerForm">
+<AnchorPane fx:id="root" prefHeight="727.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.app.controller.ManageCustomerForm">
    <children>
-      <ImageView fx:id="imgBack" fitHeight="40.0" fitWidth="68.0" layoutX="27.0" layoutY="22.0" onMouseClicked="#navigateOnMouseClicked" onMouseEntered="#playAnimationOnMouseEnter" onMouseExited="#playAnimationOnMouseExit" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgBack" fitHeight="40.0" fitWidth="68.0" layoutX="27.0" layoutY="22.0" onMouseClicked="#navigateOnMouseClicked" onMouseEntered="#playAnimationOnMouseEnter" onMouseExited="#playAnimationOnMouseExit" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="20.0">
          <image>
             <Image url="@../asset.img/back.png" />
          </image>
       </ImageView>
       <Label alignment="CENTER" layoutX="91.0" layoutY="27.0" prefHeight="30.0" prefWidth="397.0" text="Manage Customers" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0">
          <font>
-            <Font size="24.0" />
+            <Font name="Ubuntu" size="24.0" />
          </font>
       </Label>
-      <JFXButton fx:id="btnNewCustomer" buttonType="RAISED" layoutX="444.0" layoutY="88.0" onAction="#btnNewCustomerOnAction" prefHeight="38.0" prefWidth="142.0" style="-fx-background-color: green;" text="+ NEW CUSTOMER" textFill="WHITE" AnchorPane.rightAnchor="14.0" />
+      <JFXButton fx:id="btnNewCustomer" buttonType="RAISED" layoutX="434.0" layoutY="79.0" onAction="#btnNewCustomerOnAction" onMouseEntered="#playAnimationOnMouseEnter" onMouseExited="#playAnimationOnMouseExit" prefHeight="38.0" prefWidth="103.0" text=" " textFill="#ffffff00" AnchorPane.rightAnchor="14.0">
+         <font>
+            <Font name="Ubuntu" size="14.0" />
+         </font></JFXButton>
       <Separator layoutX="180.0" layoutY="76.0" prefWidth="200.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
-      <VBox layoutX="27.0" layoutY="129.0" prefHeight="144.0" prefWidth="454.0" spacing="10.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+      <VBox layoutX="15.0" layoutY="147.0" prefHeight="144.0" prefWidth="454.0" spacing="10.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
          <children>
             <VBox prefHeight="12.0" prefWidth="454.0">
                <children>
-                  <Label text="Customer ID" />
-                  <JFXTextField fx:id="txtCustomerId" prefHeight="8.0" prefWidth="454.0" />
+                  <Label text="Customer ID">
+                     <font>
+                        <Font name="Ubuntu" size="14.0" />
+                     </font>
+                     <effect>
+                        <Glow />
+                     </effect></Label>
+                  <JFXTextField fx:id="txtCustomerId" prefHeight="8.0" prefWidth="454.0">
+                     <font>
+                        <Font name="Ubuntu" size="13.0" />
+                     </font></JFXTextField>
                </children>
             </VBox>
             <VBox>
                <children>
-                  <Label text="Customer Name" />
-                  <JFXTextField fx:id="txtCustomerName" />
+                  <Label text="Customer Name">
+                     <font>
+                        <Font name="Ubuntu" size="14.0" />
+                     </font>
+                     <effect>
+                        <Glow />
+                     </effect></Label>
+                  <JFXTextField fx:id="txtCustomerName">
+                     <font>
+                        <Font name="Ubuntu" size="13.0" />
+                     </font></JFXTextField>
                </children>
             </VBox>
             <VBox>
                <children>
-                  <Label text="Customer Address" />
-                  <JFXTextField fx:id="txtCustomerAddress" />
+                  <Label text="Customer Address">
+                     <font>
+                        <Font name="Ubuntu" size="14.0" />
+                     </font>
+                     <effect>
+                        <Glow />
+                     </effect></Label>
+                  <JFXTextField fx:id="txtCustomerAddress">
+                     <font>
+                        <Font name="Ubuntu" size="13.0" />
+                     </font></JFXTextField>
                </children>
             </VBox>
          </children>
       </VBox>
-      <HBox fx:id="hbox" alignment="CENTER" layoutX="237.0" layoutY="291.0" spacing="10.0">
+      <HBox fx:id="hbox" alignment="CENTER" layoutX="15.0" layoutY="299.0" spacing="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
          <children>
-            <JFXButton fx:id="btnSave" buttonType="RAISED" onAction="#btnSaveOnAction" prefHeight="36.0" prefWidth="84.0" style="-fx-background-color: LIGHTGREEN; -fx-background-radius: 10;" text="SAVE" />
-            <JFXButton fx:id="btnDelete" buttonType="RAISED" onAction="#btnDeleteOnAction" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: LIGHTGRAY; -fx-background-radius: 10;" text="DELETE" />
+            <JFXButton fx:id="btnSave" buttonType="RAISED" onAction="#btnSaveOnAction" prefHeight="36.0" prefWidth="84.0" style="-fx-background-color: LIGHTGREEN; -fx-background-radius: 10;" text="SAVE">
+               <font>
+                  <Font name="Ubuntu" size="14.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="btnDelete" buttonType="RAISED" onAction="#btnDeleteOnAction" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: LIGHTGRAY; -fx-background-radius: 10;" text="DELETE">
+               <font>
+                  <Font name="Ubuntu" size="14.0" />
+               </font></JFXButton>
          </children></HBox>
-      <TableView fx:id="tblCustomers" layoutX="171.0" layoutY="348.0" prefHeight="351.0" prefWidth="570.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="346.0">
+      <TableView fx:id="tblCustomers" layoutX="171.0" layoutY="350.0" prefHeight="362.0" prefWidth="570.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="350.0">
         <columns>
           <TableColumn prefWidth="123.0" text="CUSTOMER ID" />
           <TableColumn minWidth="0.0" prefWidth="202.0" text="CUSTOMER NAME" />

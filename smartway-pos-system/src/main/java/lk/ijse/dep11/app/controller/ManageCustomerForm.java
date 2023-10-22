@@ -2,23 +2,25 @@ package lk.ijse.dep11.app.controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import javafx.animation.FadeTransition;
 import javafx.animation.ScaleTransition;
 import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import lk.ijse.dep11.app.db.CustomerDataAccess;
@@ -46,13 +48,20 @@ public class ManageCustomerForm {
         Stage primaryStage = (Stage) (this.root.getScene().getWindow());
         primaryStage.setScene(scene);
         primaryStage.centerOnScreen();
+        FadeTransition fadeTransition = new FadeTransition(Duration.millis(2000),root);
+        fadeTransition.setFromValue(0);
+        fadeTransition.setToValue(1.0);
+        fadeTransition.play();
         Platform.runLater(primaryStage::sizeToScene);
     }
 
     public void initialize() {
-        root.widthProperty().addListener((ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> {
-            hbox.setLayoutX(newValue.doubleValue() / 2 - (btnSave.widthProperty().getValue() / 2));
-        });
+        ImageView imageView = new ImageView(new Image("asset.img/addNewCustomer.png"));
+        imageView.setFitHeight(50);
+        imageView.setPreserveRatio(true);
+        btnNewCustomer.setGraphic(imageView);
+        btnNewCustomer.setTooltip(new Tooltip("Add New Customer"));
+
 
         txtCustomerId.setEditable(false);
         btnDelete.setDisable(true);
@@ -76,14 +85,27 @@ public class ManageCustomerForm {
                 btnDelete.setDisable(true);
             }
         });
+        loadAllCustomers();
+        Platform.runLater(txtCustomerName::requestFocus);
+        Platform.runLater(()-> btnNewCustomer.fire());
+    }
 
+    private void loadAllCustomers() {
+        try {
+            tblCustomers.getItems().addAll(CustomerDataAccess.getAllCustomers());
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR,"Failed to load customers, Please try again").show();
+            throw new RuntimeException(e);
+        }
     }
 
     public void btnNewCustomerOnAction(ActionEvent actionEvent) {
+
         for (TextField textField : new TextField[]{txtCustomerName, txtCustomerId, txtCustomerAddress}) {
             textField.clear();
         }
         txtCustomerName.requestFocus();
+        tblCustomers.getSelectionModel().clearSelection();
         try {
             if (CustomerDataAccess.getAllCustomers().isEmpty()) {
                 txtCustomerId.setText("C001");
@@ -94,6 +116,7 @@ public class ManageCustomerForm {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
 
     }
 
@@ -142,18 +165,33 @@ public class ManageCustomerForm {
     }
 
     public void playAnimationOnMouseEnter(MouseEvent event) {
-        ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(100), (ImageView) event.getSource());
-        scaleTransition.setToX(1.3);
-        scaleTransition.setToY(1.3);
-        scaleTransition.play();
+        if(event.getSource() instanceof Node) {
+            Node node = (Node) event.getSource();
+
+            ScaleTransition scaleTrans = new ScaleTransition(Duration.millis(350), node);
+            scaleTrans.setToX(1.2);
+            scaleTrans.setToY(1.2);
+            scaleTrans.play();
+
+            DropShadow ds = new DropShadow();
+            ds.setColor(Color.DARKGREEN);
+            ds.setWidth(20);
+            ds.setHeight(20);
+            ds.setRadius(20);
+            node.setEffect(ds);
+        }
 
     }
 
     public void playAnimationOnMouseExit(MouseEvent event) {
-        ScaleTransition scaleTransition = new ScaleTransition(Duration.millis(100), (ImageView) event.getSource());
-        scaleTransition.setToX(1);
-        scaleTransition.setToY(1);
-        scaleTransition.play();
+        if ((event.getSource() instanceof Node)) {
+            Node node = (Node) event.getSource();
+            ScaleTransition scaleTrans = new ScaleTransition(Duration.millis(500), node);
+            scaleTrans.setToX(1);
+            scaleTrans.setToY(1);
+            scaleTrans.play();
+            node.setEffect(null);
+        }
 
     }
 }
