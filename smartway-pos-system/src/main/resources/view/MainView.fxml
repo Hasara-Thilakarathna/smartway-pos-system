@@ -9,19 +9,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="447.0" prefWidth="618.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.app.controller.MainViewController">
+<AnchorPane fx:id="root" prefHeight="447.0" prefWidth="618.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.app.controller.MainViewController">
    <children>
-      <Label alignment="CENTER" layoutX="15.0" layoutY="28.0" text="SMARTWAY " textFill="#328079" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="28.0">
-         <font>
-            <Font name="Ubuntu Bold" size="29.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="171.0" layoutY="68.0" text="POINT of SALE SYSTEM" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="70.0">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="92.0" fitWidth="102.0" layoutX="371.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="92.0" fitWidth="102.0" layoutX="446.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../asset.img/main-window.gif" />
          </image>
@@ -67,5 +57,10 @@
          <font>
             <Font name="Ubuntu" size="14.0" />
          </font></Label>
+      <ImageView fitHeight="100.0" fitWidth="294.0" layoutX="152.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset.img/logo.gif" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
