@@ -1,14 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.dep11.app.controller.PlaceOrderForm"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="1078.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.app.controller.PlaceOrderForm">
+   <children>
+      <Label alignment="CENTER" layoutX="200.0" layoutY="28.0" text="Place Order" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0">
+         <font>
+            <Font name="Ubuntu" size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="40.0" fitWidth="68.0" layoutX="15.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="22.0">
+         <image>
+            <Image url="@../asset.img/back.png" />
+         </image>
+      </ImageView>
+      <Separator layoutX="15.0" layoutY="70.0" prefWidth="200.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+      <HBox alignment="CENTER" layoutX="26.0" layoutY="106.0" spacing="20.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+         <children>
+            <VBox>
+               <children>
+                  <Label text="Customer ID" />
+                  <JFXComboBox prefHeight="24.0" prefWidth="181.0" />
+               </children>
+            </VBox>
+            <VBox>
+               <children>
+                  <Label text="Customer Name" />
+                  <JFXTextField prefHeight="24.0" prefWidth="349.0" />
+               </children>
+            </VBox>
+            <VBox>
+               <children>
+                  <Label prefHeight="16.0" prefWidth="89.0" text="Item Code" />
+                  <JFXComboBox prefHeight="24.0" prefWidth="181.0" />
+               </children>
+            </VBox>
+            <VBox>
+               <children>
+                  <Label text="Item Description" />
+                  <JFXTextField prefHeight="24.0" prefWidth="349.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="13.0" layoutY="180.0" spacing="20.0">
+         <children>
+            <VBox prefHeight="40.0" prefWidth="159.0">
+               <children>
+                  <Label text="Qty in Stock" />
+                  <JFXTextField prefHeight="24.0" prefWidth="349.0" />
+               </children>
+            </VBox>
+            <VBox prefHeight="40.0" prefWidth="117.0">
+               <children>
+                  <Label text="Unit Price" />
+                  <JFXTextField prefHeight="24.0" prefWidth="349.0" />
+               </children>
+            </VBox>
+            <VBox layoutX="189.0" layoutY="10.0" prefHeight="40.0" prefWidth="205.0">
+               <children>
+                  <Label text="Order Qty" />
+                  <JFXTextField prefHeight="24.0" prefWidth="349.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <JFXButton fx:id="btnAddOrder" layoutX="630.0" layoutY="180.0" onAction="#btnAddOrderOnAction" text=" " />
+      <VBox layoutX="954.0" layoutY="182.0" spacing="5.0">
+         <children>
+            <Label text="Order ID: OD001" />
+            <Label text="2023-10-23" />
+         </children>
+      </VBox>
+   </children>
 </AnchorPane>
