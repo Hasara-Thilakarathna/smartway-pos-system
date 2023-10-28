@@ -16,4 +16,8 @@ public class Item implements Serializable {
     private int qty;
     private BigDecimal unitPrice;
 
+    @Override
+    public String toString() {
+        return code;
+    }
 }

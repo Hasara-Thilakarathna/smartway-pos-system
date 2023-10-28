@@ -76,13 +76,13 @@ public class OrderDataAccess {
 
             for (OrderItem orderItem : orderItemList) {
                 STM_INSERT_ORDER_ITEM.setString(1, orderId);
-                STM_INSERT_ORDER_ITEM.setString(2, orderItem.getItem_code());
+                STM_INSERT_ORDER_ITEM.setString(2, orderItem.getItemCode());
                 STM_INSERT_ORDER_ITEM.setInt(3, orderItem.getQty());
-                STM_INSERT_ORDER_ITEM.setBigDecimal(4, orderItem.getUnit_price());
+                STM_INSERT_ORDER_ITEM.setBigDecimal(4, orderItem.getUnitPrice());
                 STM_INSERT_ORDER_ITEM.executeUpdate();
 
                 STM_UPDATE_STOCK.setInt(1, orderItem.getQty());
-                STM_UPDATE_STOCK.setString(2, orderItem.getItem_code());
+                STM_UPDATE_STOCK.setString(2, orderItem.getItemCode());
                 STM_UPDATE_STOCK.executeUpdate();
             }
             SingleConnectionDataSource.getInstance().getConnection().commit();

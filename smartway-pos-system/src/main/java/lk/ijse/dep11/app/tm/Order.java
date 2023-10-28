@@ -17,5 +17,4 @@ public class Order implements Serializable {
     private String customerName;
     private BigDecimal orderTotal;
 
-
 }

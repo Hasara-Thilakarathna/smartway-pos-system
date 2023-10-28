@@ -12,14 +12,14 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 
 public class OrderItem implements Serializable {
-    private String item_code;
-    private String item_description;
+    private String itemCode;
+    private String itemDescription;
     private int qty;
-    private BigDecimal unit_price;
+    private BigDecimal unitPrice;
     private transient JFXButton btnDelete;
 
     public BigDecimal getTotal() {
-        return unit_price.multiply(new BigDecimal(qty)).setScale(2);
+        return unitPrice.multiply(new BigDecimal(qty)).setScale(2);
     }
 
 }
