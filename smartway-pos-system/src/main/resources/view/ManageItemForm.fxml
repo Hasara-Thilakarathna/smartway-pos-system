@@ -101,7 +101,7 @@
       </VBox>
       <HBox alignment="CENTER" layoutX="210.0" layoutY="335.0" spacing="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
          <children>
-            <JFXButton fx:id="btnSave" buttonType="RAISED" onAction="#btnSaveOnAction" prefHeight="39.0" prefWidth="66.0" style="-fx-background-color: LIGHTGREEN; -fx-background-radius: 10;" text="SAVE" />
+            <JFXButton fx:id="btnSave" buttonType="RAISED" onAction="#btnSaveOnAction" prefHeight="39.0" prefWidth="92.0" style="-fx-background-color: LIGHTGREEN; -fx-background-radius: 10;" text="SAVE" />
             <JFXButton fx:id="btnDelete" buttonType="RAISED" onAction="#btnDeleteOnAction" prefHeight="39.0" prefWidth="84.0" style="-fx-background-color: LIGHTGRAY; -fx-background-radius: 10;" text="DELETE" />
          </children>
       </HBox>

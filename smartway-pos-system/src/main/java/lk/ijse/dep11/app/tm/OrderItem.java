@@ -12,8 +12,8 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 
 public class OrderItem implements Serializable {
-    private String itemCode;
-    private String itemDescription;
+    private String code;
+    private String description;
     private int qty;
     private BigDecimal unitPrice;
     private transient JFXButton btnDelete;

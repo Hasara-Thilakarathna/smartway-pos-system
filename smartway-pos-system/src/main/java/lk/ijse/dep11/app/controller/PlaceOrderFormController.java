@@ -70,7 +70,7 @@ public class PlaceOrderFormController {
         btnAddOrder.setGraphic(imageView);
 
 
-        String[] cols = {"itemCode", "itemDescription", "qty", "unitPrice", "total", "btnDelete"};
+        String[] cols = {"code", "description", "qty", "unitPrice", "total", "btnDelete"};
         for (int i = 0; i < cols.length; i++) {
             tblOrderDetails.getColumns().get(i).setCellValueFactory(new PropertyValueFactory<>(cols[i]));
         }
@@ -146,7 +146,7 @@ public class PlaceOrderFormController {
     public void btnAddOrderOnAction(ActionEvent actionEvent) {
         Item selectedItem = cmbItemCode.getSelectionModel().getSelectedItem();
         Optional<OrderItem> optOrderItem = tblOrderDetails.getItems().stream()
-                .filter(item -> selectedItem.getCode().equals(item.getItemCode())).findFirst();
+                .filter(item -> selectedItem.getCode().equals(item.getCode())).findFirst();
 
         if (optOrderItem.isEmpty()) {
             JFXButton btnDelete = new JFXButton("Delete");

@@ -62,7 +62,6 @@ public class OrderDataAccess {
             orderList.add(new Order(orderId, orderDate.toString(), customerId, customerName, orderTotal));
         }
         return orderList;
-
     }
 
     public static void saveOrder(String orderId, Date orderDate, String customerId, List<OrderItem> orderItemList) throws SQLException {
@@ -76,13 +75,13 @@ public class OrderDataAccess {
 
             for (OrderItem orderItem : orderItemList) {
                 STM_INSERT_ORDER_ITEM.setString(1, orderId);
-                STM_INSERT_ORDER_ITEM.setString(2, orderItem.getItemCode());
+                STM_INSERT_ORDER_ITEM.setString(2, orderItem.getCode());
                 STM_INSERT_ORDER_ITEM.setInt(3, orderItem.getQty());
                 STM_INSERT_ORDER_ITEM.setBigDecimal(4, orderItem.getUnitPrice());
                 STM_INSERT_ORDER_ITEM.executeUpdate();
 
                 STM_UPDATE_STOCK.setInt(1, orderItem.getQty());
-                STM_UPDATE_STOCK.setString(2, orderItem.getItemCode());
+                STM_UPDATE_STOCK.setString(2, orderItem.getCode());
                 STM_UPDATE_STOCK.executeUpdate();
             }
             SingleConnectionDataSource.getInstance().getConnection().commit();

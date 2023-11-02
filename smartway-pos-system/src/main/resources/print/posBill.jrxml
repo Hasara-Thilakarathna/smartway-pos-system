@@ -23,21 +23,14 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Ubuntu" size="16" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Smart POS]]></text>
+				<text><![CDATA[SmartWay]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="20" width="216" height="20" uuid="97643533-f2c7-4239-8411-08ace4536e78"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font fontName="Ubuntu" size="10" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Institute of Software Engineering]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="0" y="32" width="216" height="19" uuid="eb8ab53d-291c-47d5-999b-912fb139eb14"/>
-				<textElement textAlignment="Center" verticalAlignment="Top">
-					<font fontName="Ubuntu"/>
-				</textElement>
-				<text><![CDATA[Grace Peries Road, Panadura]]></text>
+				<text><![CDATA[Point Of sales System]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -271,9 +264,9 @@
 			<staticText>
 				<reportElement x="0" y="33" width="216" height="17" uuid="5f2507be-6857-4c44-b382-787bdb468d3f"/>
 				<textElement textAlignment="Center">
-					<font fontName="Ubuntu" size="8"/>
+					<font fontName="Ubuntu" size="6"/>
 				</textElement>
-				<text><![CDATA[Copyright (c) 2023 DEP-11. All Rights Reserved.]]></text>
+				<text><![CDATA[Copyright (c) 2023 Hasara Thilakarathna. All Rights Reserved.]]></text>
 			</staticText>
 		</band>
 	</pageFooter>
