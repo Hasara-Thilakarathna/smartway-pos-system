@@ -5,7 +5,6 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.animation.FadeTransition;
 import javafx.animation.ScaleTransition;
 import javafx.application.Platform;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -24,13 +23,13 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import lk.ijse.dep11.app.db.CustomerDataAccess;
+import lk.ijse.dep11.app.db.OrderDataAccess;
 import lk.ijse.dep11.app.tm.Customer;
 
 import java.io.IOException;
-import java.net.URL;
 import java.sql.SQLException;
 
-public class ManageCustomerForm {
+public class ManageCustomerFormController {
     public AnchorPane root;
     public TableView<Customer> tblCustomers;
     public ImageView imgBack;
@@ -161,7 +160,19 @@ public class ManageCustomerForm {
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) throws SQLException {
-
+        try {
+            if(OrderDataAccess.existsOrderByCustomerId(txtCustomerId.getText())) {
+                new Alert(Alert.AlertType.ERROR,"Unable to delete this customer, already associated with an order").show();
+            } else {
+                CustomerDataAccess.deleteCustomer(txtCustomerId.getText());
+                ObservableList<Customer> customerList = tblCustomers.getItems();
+                Customer selectedCustomer = tblCustomers.getSelectionModel().getSelectedItem();
+                customerList.remove(selectedCustomer);
+                if(customerList.isEmpty()) btnNewCustomer.fire();
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void playAnimationOnMouseEnter(MouseEvent event) {

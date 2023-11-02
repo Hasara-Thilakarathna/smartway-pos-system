@@ -23,16 +23,15 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import lk.ijse.dep11.app.db.CustomerDataAccess;
 import lk.ijse.dep11.app.db.ItemDataAccess;
-import lk.ijse.dep11.app.tm.Customer;
+import lk.ijse.dep11.app.db.OrderDataAccess;
 import lk.ijse.dep11.app.tm.Item;
 
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.SQLException;
 
-public class ManageItemForm {
+public class ManageItemFormController {
     public AnchorPane root;
     public ImageView imgBack;
     public TableView<Item> tblItems;
@@ -176,6 +175,19 @@ public class ManageItemForm {
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
+        Item selectedItem = tblItems.getSelectionModel().getSelectedItem();
+        try {
+            if (OrderDataAccess.existsOrderByItemCode(selectedItem.getCode())){
+                new Alert(Alert.AlertType.ERROR, "Failed to delete, the item already associated with an order").show();
+            }else{
+                ItemDataAccess.deleteItem(selectedItem.getCode());
+                tblItems.getItems().remove(selectedItem);
+                if (tblItems.getItems().isEmpty()) btnAddNewItem.fire();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "Failed to delete the item, try again").show();
+        }
     }
 
     public void btnAddNewItem(ActionEvent actionEvent) {

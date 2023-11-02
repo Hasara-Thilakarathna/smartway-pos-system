@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="743.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.app.controller.ManageItemForm">
+<AnchorPane fx:id="root" prefHeight="743.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.app.controller.ManageItemFormController">
    <children>
       <Label alignment="CENTER" layoutX="282.0" layoutY="35.0" prefHeight="29.0" prefWidth="282.0" text="Manage Items" AnchorPane.leftAnchor="205.0" AnchorPane.rightAnchor="205.0">
          <font>

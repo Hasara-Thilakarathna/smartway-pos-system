@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" prefHeight="727.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.app.controller.ManageCustomerForm">
+<AnchorPane fx:id="root" prefHeight="727.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.app.controller.ManageCustomerFormController">
    <children>
       <ImageView fx:id="imgBack" fitHeight="40.0" fitWidth="68.0" layoutX="27.0" layoutY="22.0" onMouseClicked="#navigateOnMouseClicked" onMouseEntered="#playAnimationOnMouseEnter" onMouseExited="#playAnimationOnMouseExit" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="20.0">
          <image>

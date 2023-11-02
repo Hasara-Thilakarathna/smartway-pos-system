@@ -107,7 +107,7 @@ public class OrderDataAccess {
     }
 
     public static boolean existsOrderByItemCode(String code) throws SQLException {
-        STM_INSERT_ORDER_ITEM.setString(1, code);
-        return STM_INSERT_ORDER_ITEM.executeQuery().next();
+        STM_EXISTS_BY_ITEM_ID.setString(1, code);
+        return STM_EXISTS_BY_ITEM_ID.executeQuery().next();
     }
 }

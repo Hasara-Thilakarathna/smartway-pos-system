@@ -106,7 +106,7 @@ public class MainViewController {
                     root = FXMLLoader.load(this.getClass().getResource("/view/PlaceOrderForm.fxml"));
                     break;
                 case "imgSearch":
-                    root = FXMLLoader.load(this.getClass().getResource("/view/SearchOrdersForm.fxml"));
+                    root = FXMLLoader.load(this.getClass().getResource("/view/SearchOrderForm.fxml"));
                     break;
             }
 
