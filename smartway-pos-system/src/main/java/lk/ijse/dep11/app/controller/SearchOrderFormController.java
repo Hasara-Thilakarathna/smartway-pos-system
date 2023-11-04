@@ -47,7 +47,7 @@ public class SearchOrderFormController {
         txtSearch.textProperty().addListener((ov, prev, cur) -> {
             tblOrders.getItems().clear();
             try {
-                tblOrders.getItems().addAll(OrderDataAccess.findOrders(cur))
+                tblOrders.getItems().addAll(OrderDataAccess.findOrders(cur));
             } catch (SQLException e) {
                 e.printStackTrace();
             }
