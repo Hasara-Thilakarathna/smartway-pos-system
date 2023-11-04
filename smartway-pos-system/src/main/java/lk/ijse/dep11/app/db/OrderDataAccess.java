@@ -41,7 +41,7 @@ public class OrderDataAccess {
                     "         INNER JOIN order_item AS oi ON oi.order_id = o.id GROUP BY o.id) AS order_total\n" +
                     "ON o.id = order_total.id\n" +
                     "WHERE o.id LIKE ? OR CAST(o.date AS VARCHAR(20)) LIKE ? OR o.customer_id LIKE ? OR c.name LIKE ? " +
-                    "ORDER BY o.id");
+                    "ORDER BY o.id" );
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -49,7 +49,7 @@ public class OrderDataAccess {
     }
 
     public static List<Order> findOrders(String query) throws SQLException {
-        for (int i = 0; i < 4; i++)
+        for (int i = 1; i <= 4; i++)
             STM_FIND.setString(i, "%".concat(query).concat("%"));
         ResultSet rst = STM_FIND.executeQuery();
         List<Order> orderList = new ArrayList<>();

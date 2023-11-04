@@ -1,11 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.app.controller.SearchOrderFormController">
+<AnchorPane fx:id="root" prefHeight="464.0" prefWidth="726.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.app.controller.SearchOrderFormController">
    <children>
-      <Label layoutX="244.0" layoutY="46.0" text="Search Customer" />
+      <Label alignment="CENTER" layoutX="200.0" layoutY="34.0" text="Search Customer" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0">
+         <font>
+            <Font name="Ubuntu" size="24.0" />
+         </font></Label>
+      <ImageView fx:id="imgBack" fitHeight="40.0" fitWidth="68.0" layoutX="14.0" layoutY="29.0" onMouseClicked="#navigateOnMouseClicked" onMouseEntered="#playAnimationOnMouseEnter" onMouseExited="#playAnimationOnMouseExit" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asset.img/back.png" />
+         </image>
+      </ImageView>
+      <Separator layoutX="15.0" layoutY="82.0" prefWidth="200.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+      <Label layoutX="16.0" layoutY="108.0" text="Enter something to search:">
+         <font>
+            <Font name="Ubuntu" size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblOrders" layoutX="16.0" layoutY="179.0" prefHeight="274.0" prefWidth="570.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+        <columns>
+          <TableColumn prefWidth="98.0" text="ORDER ID" />
+          <TableColumn prefWidth="90.0" text="ORDER DATE" />
+            <TableColumn prefWidth="118.0" text="CUSTOMER ID" />
+            <TableColumn prefWidth="169.0" text="CUSTOMER NAME" />
+            <TableColumn prefWidth="130.0" text="TOTAL" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <TextField fx:id="txtSearch" layoutX="16.0" layoutY="132.0" onMouseEntered="#focusOnMouseEnter" onMouseExited="#focusOnMouseExit" promptText="Eg. C001, Hasara" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
    </children>
 </AnchorPane>
