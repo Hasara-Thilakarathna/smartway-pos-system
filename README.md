@@ -9,8 +9,9 @@
 - **Efficient Sales Management**: Easily record and manage sales transactions, item details, and customer details.
 - **Inventory Management**: System helps to easily keep in touch with low inventory levels.
 
+![Home view UI of the application](/img/homeview.png)
 
-**Let's get started with SMARTWAY !
+**Let's get started with SMARTWAY !**
 
 ## Version
 0.1.0
