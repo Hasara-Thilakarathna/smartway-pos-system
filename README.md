@@ -15,35 +15,49 @@
 
 - **Home View UI**
 
-![Home view UI of the application](/img/homeview.png)
+![Home view UI of the application](/img/homeview.png)<br>
+   
 
 
 2. Customer Management system to add , delete or update customer details.
 
 - **Customer Management UI.**
 
-![Manage Customers](/img/managecustomers.png)
+![Manage Customers](/img/managecustomers.png) <br>
+  
 
 
 3. Product Management system to add , delete or update inventory.
 
 - **Inventory Management UI.**
 
-![Manage Items](/img/manageitems.png)
+![Manage Items](/img/manageitems.png)<br>
+  
 
 
 4. Order Management system to add, remove, place orders and print POS bill.
 
 - **Order Management UI.**
 
-![Manage Orders](/img/manageorders.png)
+![Manage Orders](/img/manageorders.png)<br>
+  
 
 
 5. Search customers to check details whenever needed.
 
 - **Simple Search engine for POS system**
 
-![Search customers](/img/searchcustomers.png)
+![Search customers](/img/searchcustomers.png)<br>
+  
+
+### Technologies
+
+- Java
+- JavaFX
+- SceneBuilder
+- Maven
+- PostgreSQL
+- JasperReports
 
 
 **Let's get started with SMARTWAY !**
