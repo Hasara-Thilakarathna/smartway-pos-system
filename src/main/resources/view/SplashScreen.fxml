@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.app.controller.SplashScreenController">
+   <children>
+      <ImageView fx:id="imgLogo" fitHeight="126.0" fitWidth="639.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="100.0">
+         <image>
+            <Image url="@../asset.img/logo.gif" />
+         </image>
+      </ImageView>
+      <VBox alignment="TOP_RIGHT" layoutX="81.0" layoutY="242.0" prefHeight="42.0" prefWidth="520.0" style="-fx-background-color: lightgray; -fx-opacity: .6;" AnchorPane.rightAnchor="5.0">
+         <children>
+            <Label text="v 0.1.0">
+               <font>
+                  <Font name="Ubuntu" size="18.0" />
+               </font>
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+            </Label>
+            <Label text="Copyrights © 2023 Hasara Thilakarathna All Rights Reserved">
+               <font>
+                  <Font name="Ubuntu" size="13.0" />
+               </font>
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
