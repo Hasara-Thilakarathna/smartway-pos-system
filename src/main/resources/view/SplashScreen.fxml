@@ -5,35 +5,57 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.app.controller.SplashScreenController">
    <children>
-      <ImageView fx:id="imgLogo" fitHeight="126.0" fitWidth="639.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="100.0">
+      <StackPane layoutX="46.0" layoutY="52.0" prefHeight="150.0" prefWidth="200.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="324.0" stroke="TRANSPARENT" strokeType="INSIDE" width="494.0" />
+            <VBox>
+               <children>
+                  <ImageView fx:id="imgLogo" fitHeight="99.0" fitWidth="627.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asset.img/logo.gif" />
+                     </image>
+                  </ImageView>
+                  <VBox alignment="TOP_RIGHT" prefHeight="42.0" prefWidth="520.0" style="-fx-background-color: lightgray; -fx-opacity: .6;">
+                     <children>
+                        <Label text="v 0.1.0">
+                           <font>
+                              <Font name="Ubuntu" size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Copyrights © 2023 Hasara Thilakarathna All Rights Reserved">
+                           <font>
+                              <Font name="Ubuntu" size="13.0" />
+                           </font>
+                           <padding>
+                              <Insets right="5.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets right="10.0" />
+                     </VBox.margin>
+                  </VBox>
+               </children>
+               <StackPane.margin>
+                  <Insets left="5.0" right="5.0" top="20.0" />
+               </StackPane.margin>
+            </VBox>
+         </children>
+      </StackPane>
+      <ImageView fitHeight="612.0" fitWidth="588.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: .7;">
          <image>
-            <Image url="@../asset.img/logo.gif" />
+            <Image url="@../asset.img/computer-screen.png" />
          </image>
       </ImageView>
-      <VBox alignment="TOP_RIGHT" layoutX="81.0" layoutY="242.0" prefHeight="42.0" prefWidth="520.0" style="-fx-background-color: lightgray; -fx-opacity: .6;" AnchorPane.rightAnchor="5.0">
-         <children>
-            <Label text="v 0.1.0">
-               <font>
-                  <Font name="Ubuntu" size="18.0" />
-               </font>
-               <padding>
-                  <Insets right="5.0" />
-               </padding>
-            </Label>
-            <Label text="Copyrights © 2023 Hasara Thilakarathna All Rights Reserved">
-               <font>
-                  <Font name="Ubuntu" size="13.0" />
-               </font>
-               <padding>
-                  <Insets right="5.0" />
-               </padding>
-            </Label>
-         </children>
-      </VBox>
    </children>
 </AnchorPane>

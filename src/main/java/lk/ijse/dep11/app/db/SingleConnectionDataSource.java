@@ -23,7 +23,7 @@ public class SingleConnectionDataSource {
             String username = properties.getProperty("app.datasource.username");
             String password = properties.getProperty("app.datasource.password");
             connection = DriverManager.getConnection(url, username, password);
-            generateSchema();
+//            generateSchema();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -36,12 +36,12 @@ public class SingleConnectionDataSource {
     public Connection getConnection() {
         return connection;
     }
-    private void generateSchema() throws Exception {
-        URL url = getClass().getResource("/schema.sql");
-        Path path = Paths.get(url.toURI());
-        String dbScript = Files.readAllLines(path).stream()
-                .reduce((prevLine, currentLine) -> prevLine + currentLine).get();
-        connection.createStatement().execute(dbScript);
-    }
+//    private void generateSchema() throws Exception {
+//        URL url = getClass().getResource("/schema.sql");
+//        Path path = Paths.get(url.toURI());
+//        String dbScript = Files.readAllLines(path).stream()
+//                .reduce((prevLine, currentLine) -> prevLine + currentLine).get();
+//        connection.createStatement().execute(dbScript);
+//    }
 
 }
